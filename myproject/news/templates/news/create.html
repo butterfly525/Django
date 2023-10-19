@@ -7,6 +7,7 @@
     <h1>Add article</h1>
     <form method="post">
         {% csrf_token %}<br>
+
         {{ form.title }}<br>
         {{ form.anons }}<br>
         {{ form.full_text }}<br>

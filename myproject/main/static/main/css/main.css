@@ -3,15 +3,26 @@ body {
     background: linear-gradient(132deg, rgba(0,0,0,1) 47%, rgba(34,0,47,1) 70%, rgba(42,0,59,1) 77%, rgba(54,0,78,1) 83%, rgba(58,0,84,1) 87%, rgba(64,0,94,1) 91%, rgba(68,0,101,1) 94%, rgba(70,0,106,1) 97%, rgba(79,0,119,1) 100%);
     background-size: 150% 150%;
     animation: gradient 10s ease infinite;
-    height: 100%;
-    width: 100%;
-    min-height: 100%;
-    position: relative;
-    min-height:100vh
+
 }
 #container{
-    min-height: 100%;
-    padding-bottom: 120px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header{
+    color: #fff;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 120px;
+}
+
+#nav_links a{
+    padding: 0 20px;
 }
 
 aside{
@@ -65,17 +76,17 @@ aside tr{
     height: 80px;
 }
 
-#logo_div{
+.logo_div{
     position: relative;
     display: inline;
 }
 
-aside .logo{
+.logo{
     font-size: 35px;
     padding: 4px;
     font-weight: bold;
     display: table-cell;
-
+    color: #875B8E;
 }
 
 @keyframes zoom {
@@ -149,7 +160,6 @@ aside ul li:hover, aside ul a:hover{
 
 .nav-toggle:hover {
     color: #f4f4f4;
-    animation: change 4s ease infinite;
     box-shadow:
     0 0 11px #623868,
     0 0 20px #623868,
@@ -157,32 +167,34 @@ aside ul li:hover, aside ul a:hover{
 }
 
 
-@keyframes change {
-  0% {content: '\2630';}
-  50% {content: '\2715';}
-  100% {content: '\2630';}
-}
-
 
 
 main{
-    width: 100%;
-    height: 100%;
     padding: 120px;
-}
-
-main .features {
     color: #fff;
     text-align: center;
 }
 
 main .features h1{
-    font-size: 50px;
+    font-size: 40px;
 }
 
-main .features p{
-    max-width: 400px;
-    margin: 20px auto;
+.features button{
+    width: fit-content;
+    margin: auto;
+}
+
+.article{
+    max-width: 500px;
+    margin: 10px auto;
+}
+
+.article h3{
+    font-size: 20px;
+}
+
+.article p{
+    font-size: 17px;
 }
 
 #nav_panel{
@@ -204,26 +216,26 @@ main .features p{
 form{
     width: 40%;
     margin: 25px auto;
+    display: flex;
+    flex-direction: column;
 }
 
-
+.input_post{
+    margin-bottom: 10px;
+    color: #000;
+}
 
 
 footer {
     height: 120px;
-    width: 100%;
     background: #000;
-    position: absolute;
     padding: 1% 15%;
-    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: space-around;
     flex-wrap: wrap;
-    align-items: flex-start;
-    left: 0;
-    bottom: 0;
+    margin-top: auto;
     box-shadow:
     0 0 5px #623868,
     0 0 15px #623868,

@@ -5,7 +5,6 @@
 {% block content %}
 <div class="features">
     <h1>Add article</h1>
-    <h1>Add article</h1>
     <form method="post">
         {% csrf_token %}<br>
 
@@ -14,7 +13,7 @@
         {{ form.full_text }}<br>
         {{ form.date }}<br>
 
-        <button class="btn btn-success" type="submit">Add</button><br>
+        <button class="p-2 outline outline-1 outline-offset-4 outline-[#AF92B3]/50 rounded-md" type="submit">Add</button><br>
         <span>{{ error }}</span>
     </form>
 </div>

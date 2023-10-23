@@ -12,15 +12,15 @@
             <h3>{{ el.title }}</h3>
             <p>{{ el.anons }}</p>
             <p>{{ el.full_text }}</p>
-            <hr>
+            <p class=" pt-0.5 text-slate-500 text-sm">{{ el.date }}</p>
         </div>
+    <hr>
     {% endfor %}
     {% else %}
     <p>У вас нет записей</p>
     {% endif %}
 
 
-    {#Comment#}
 </div>
 
 {% endblock %}

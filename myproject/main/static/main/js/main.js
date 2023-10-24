@@ -15,16 +15,18 @@ document.querySelector('.ava').addEventListener('click', function() {
     });
 });
 
-document.getElementById('nav-toggle').addEventListener('change', function() {
+document.getElementById('nav_panel').addEventListener('click', function() {
     var aside = document.getElementById('nav_panel');
-    var element = document.querySelector('.nav-toggle');
+   // var element = document.querySelector('.nav-toggle');
 
-    if (this.checked) {
+    if (!document.getElementById('nav-toggle').checked) {
         aside.style.left = '0px';
-        element.textContent = '×';
+        document.getElementById('nav-toggle').checked = true;
+       // element.textContent = '×';
     } else {
-        aside.style.left = '-320px';
-        element.textContent = '≡';
+        aside.style.left = '-300px';
+        document.getElementById('nav-toggle').checked = false;
+       // element.textContent = '≡';
     }
 
 });

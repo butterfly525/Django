@@ -8,39 +8,55 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
     <script src="https://cdn.tailwindcss.com"></script>
-
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-
-<div id="container">
-<header>
+<input type="checkbox" id="nav_toggle_l" hidden>
+<input type="checkbox" id="nav_toggle_r" hidden>
+<!--<label >≡</label>-->
+<aside id="nav_panel_l" for="nav_toggle_l" onclick>
+    <img src="{% static 'main/img/ava.png' %}" class="ava cursor-zoom-in" alt="logo_icon">
     <div class="logo_div"><span class="logo">MySite</span></div>
-    <div id="nav_links">
-        <a href="{% url 'main' %}">Main </a>
-        <a href="{% url 'about' %}">About</a>
-        <a href="{% url 'news_home' %}">News</a>
-        <a href="{% url 'contacts' %}">Contacts </a>
-    </div>
+    <ul>
+        <li><a href="{% url 'main' %}">Main </a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'news_home' %}">News</a></li>
+        <li><a href="{% url 'contacts' %}">Contacts </a></li>
+        <li><a href="{% url 'create' %}">
+            <button class="p-2 outline outline-1 outline-offset-4 outline-[#AF92B3]/50 rounded-md">Add post</button>
+        </a>
+        </li>
+    </ul>
+</aside>
 
-</header>
-    <input type="checkbox" id="nav-toggle" hidden>
-    <!--<label >≡</label>-->
-    <aside id="nav_panel" for="nav-toggle" onclick>
+<aside id="nav_panel_r" for="nav_toggle_r" onclick>
 
-        <img src="{% static 'main/img/ava.png' %}" class="ava cursor-zoom-in" alt="logo_icon">
+    <img src="{% static 'main/img/ava.png' %}" class="ava cursor-zoom-in" alt="logo_icon">
+    <div class="logo_div"><span class="logo">MySite</span></div>
+    <ul>
+        <li><a href="{% url 'main' %}" class="nav_link">Main </a></li>
+        <li><a href="{% url 'about' %}" class="nav_link">About</a></li>
+        <li><a href="{% url 'news_home' %}" class="nav_link">News</a></li>
+        <li><a href="{% url 'contacts' %}" class="nav_link">Contacts </a></li>
+        <li><a href="{% url 'create' %}" class="nav_link">
+            <button class="p-2 outline outline-1 outline-offset-4 outline-[#AF92B3]/50 rounded-md">Add post</button>
+        </a>
+        </li>
+    </ul>
+</aside>
+<div id="container">
+    <header>
         <div class="logo_div"><span class="logo">MySite</span></div>
-        <ul>
-            <li><a href="{% url 'main' %}">Main </a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'news_home' %}">News</a></li>
-            <li><a href="{% url 'contacts' %}">Contacts </a></li>
-            <li><a href="{% url 'create' %}">
-                <button class="p-2 outline outline-1 outline-offset-4 outline-[#AF92B3]/50 rounded-md">Add post</button>
-            </a>
-            </li>
-        </ul>
-    </aside>
+        <div id="nav_links">
+            <a href="{% url 'main' %}" class="nav_link">Main </a>
+            <a href="{% url 'about' %}" class="nav_link">About</a>
+            <a href="{% url 'news_home' %}" class="nav_link">News</a>
+            <a href="{% url 'contacts' %}" class="nav_link">Contacts </a>
+        </div>
+
+    </header>
+
 
     <main>
 

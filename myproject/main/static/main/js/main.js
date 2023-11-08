@@ -1,6 +1,6 @@
-document.querySelector('.ava').addEventListener('click', function() {
+/*document.querySelector('.ava').addEventListener('click', function() {
     const newDiv = document.createElement('div');
-    const parentElement = document.getElementById('nav_panel');
+    const parentElement = document.getElementById('nav_panel_r');
     parentElement.appendChild(newDiv);
     newDiv.setAttribute('class', 'image-fullscreen cursor-zoom-out');
     var imageUrl = this.src;
@@ -9,11 +9,11 @@ document.querySelector('.ava').addEventListener('click', function() {
     fullscreenImage.style.display = 'block';
     var fullscreenImage = document.querySelector('.image-fullscreen');
     fullscreenImage.addEventListener('click', function() {
-        var parent = document.getElementById('nav_panel');
+        var parent = document.getElementById('nav_panel_r');
         var child = document.querySelector('.image-fullscreen');
         parent.removeChild(child);
     });
-});
+});*/
 
 document.getElementById('nav_panel_l').addEventListener('click', function() {
     var aside = document.getElementById('nav_panel_l');
@@ -65,18 +65,3 @@ document.querySelector('#container').addEventListener('click', function() {
     }*/
 });
 
-/*
-document.querySelector('#nav_links').addEventListener('click', function(e) {
-    e.preventDefault(); // Отменяем стандартное действие ссылки
-    var url = this.getAttribute('href'); // Получаем URL ссылки
-  alert(url);
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        document.querySelector('.features').innerHTML = this.responseText;
-      }
-    };
-    xhttp.open("GET", url, true);
-    xhttp.send();
-  });
-});*/

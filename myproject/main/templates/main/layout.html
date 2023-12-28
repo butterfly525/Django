@@ -12,15 +12,15 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-<input type="checkbox" id="nav_toggle_l" hidden>
+<input type="checkbox" id="nav-toggle-l" hidden>
 <input type="checkbox" id="nav_toggle_r" hidden>
 <div id="preloader" style="display: none;">
     <h3>Loading...</h3>
 </div>
 <!--<label >≡</label>-->
-<aside id="nav_panel_l" for="nav_toggle_l" onclick>
+<aside id="nav-panel-l" for="nav-toggle-l" onclick>
     <img src="{% static 'main/img/ava.png' %}" class="ava cursor-zoom-in" alt="logo_icon">
-    <div class="logo_div"><span class="logo">MySite</span></div>
+    <div class="logo-div"><span class="logo">MySite</span></div>
     <ul>
         <li><a href="{% url 'main' %}" class="nav-link">Main </a></li>
         <li><a href="{% url 'about' %}" class="nav-link">About</a></li>
@@ -33,25 +33,10 @@
     </ul>
 </aside>
 
-<aside id="nav_panel_r" for="nav_toggle_r" onclick>
-
-    <img src="{% static 'main/img/ava.png' %}" class="ava cursor-zoom-in" alt="logo_icon">
-    <div class="logo_div"><span class="logo">MySite</span></div>
-    <ul>
-        <li><a href="{% url 'main' %}" class="nav-link">Main </a></li>
-        <li><a href="{% url 'about' %}" class="nav-link">About</a></li>
-        <li><a href="{% url 'news_home' %}" class="nav-link">News</a></li>
-        <li><a href="{% url 'contacts' %}" class="nav-link">Contacts </a></li>
-        <li><a href="{% url 'create' %}" class="nav-link">
-            <button class="p-2 outline outline-1 outline-offset-4 outline-[#AF92B3]/50 rounded-md">Add post</button>
-        </a>
-        </li>
-    </ul>
-</aside>
 <div id="container">
     <header>
-        <div class="logo_div"><span class="logo">MySite</span></div>
-        <div id="nav_links">
+        <div class="logo-div"><a href="{% url 'main' %}" class="logo nav-link">MySite</a></div>
+        <div id="nav-links">
             <a href="{% url 'main' %}" class="nav-link">Main </a>
             <a href="{% url 'about' %}" class="nav-link">About</a>
             <a href="{% url 'news_home' %}" class="nav-link">News</a>
@@ -63,15 +48,16 @@
     <main>
         {% block content %}{% endblock %}
     </main>
-    <footer>
-
-        <a href="{% url 'main' %}" class="nav-link">Main </a>
-        <a href="{% url 'about' %}" class="nav-link">About</a>
-        <a href="{% url 'news_home' %}" class="nav-link">News</a>
-        <a href="{% url 'contacts' %}" class="nav-link">Contacts </a>
-
-    </footer>
+    
 </div>
+<footer>
+
+    <a href="{% url 'main' %}" class="nav-link">Main </a>
+    <a href="{% url 'about' %}" class="nav-link">About</a>
+    <a href="{% url 'news_home' %}" class="nav-link">News</a>
+    <a href="{% url 'contacts' %}" class="nav-link">Contacts </a>
+
+</footer>
 <!--<script src="{% static 'main/js/three.min.js' %}"></script>-->
 <!--<script src="{% static 'main/js/vanta.cells.min.js' %}"></script>-->
 <!--<script src="{% static 'main/js/animation.js' %}"></script>-->

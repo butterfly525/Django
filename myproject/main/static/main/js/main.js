@@ -1,67 +1,51 @@
-/*document.querySelector('.ava').addEventListener('click', function() {
-    const newDiv = document.createElement('div');
-    const parentElement = document.getElementById('nav_panel_r');
-    parentElement.appendChild(newDiv);
-    newDiv.setAttribute('class', 'image-fullscreen cursor-zoom-out');
-    var imageUrl = this.src;
-    var fullscreenImage = document.querySelector('.image-fullscreen');
-    fullscreenImage.style.backgroundImage = 'url(' + imageUrl + ')';
-    fullscreenImage.style.display = 'block';
-    var fullscreenImage = document.querySelector('.image-fullscreen');
-    fullscreenImage.addEventListener('click', function() {
-        var parent = document.getElementById('nav_panel_r');
-        var child = document.querySelector('.image-fullscreen');
-        parent.removeChild(child);
-    });
-});*/
+document.getElementById('nav-panel-l').addEventListener('click', function() {
+    var aside = document.getElementById('nav-panel-l');
 
-document.getElementById('nav_panel_l').addEventListener('click', function() {
-    var aside = document.getElementById('nav_panel_l');
-   // var element = document.querySelector('.nav-toggle');
-
-    if (!document.getElementById('nav_toggle_l').checked) {
-        aside.style.left = '-40%';
-        document.getElementById('nav_toggle_l').checked = true;
+    if (!document.getElementById('nav-toggle-l').checked) {
+        aside.style.left = '-340px';
+        document.getElementById('nav-toggle-l').checked = true;
        // element.textContent = '×';
     } else {
         aside.style.left = '0px';
-        document.getElementById('nav_toggle_l').checked = false;
+        document.getElementById('nav-toggle-l').checked = false;
        // element.textContent = '≡';
     }
 
 });
 
-document.getElementById('nav_panel_r').addEventListener('click', function() {
-    var aside = document.getElementById('nav_panel_r');
-   // var element = document.querySelector('.nav-toggle');
-
-    if (!document.getElementById('nav_toggle_r').checked) {
-        aside.style.right = '-40%';
-        document.getElementById('nav_toggle_r').checked = true;
-       // element.textContent = '×';
-    } else {
-        aside.style.right = '0px';
-        document.getElementById('nav_toggle_r').checked = false;
-       // element.textContent = '≡';
-    }
-
-});
 
 document.querySelector('#container').addEventListener('click', function() {
 
-    var aside_r = document.getElementById('nav_panel_r');
-    var aside_l = document.getElementById('nav_panel_l');
+    var aside_l = document.getElementById('nav-panel-l');
 
-    if (!document.getElementById('nav_toggle_r').checked || !document.getElementById('nav_toggle_l').checked) {
-        aside_r.style.right = '-40%';
-        aside_l.style.left = '-40%';
-        document.getElementById('nav_toggle_r').checked = true;
-        document.getElementById('nav_toggle_l').checked = true;
-    } /*else {
-        aside_r.style.right = '0%';
-        aside_l.style.left = '0%';
-        document.getElementById('nav_toggle_r').checked = false;
-        document.getElementById('nav_toggle_l').checked = false;
-    }*/
+    if (!document.getElementById('nav-toggle-l').checked) {
+      
+        aside_l.style.left = '-340px';
+        document.getElementById('nav-toggle-l').checked = true;
+    } 
 });
 
+$('.nav-link').click(function(e) {
+    e.preventDefault(); // Отменяем стандартное действие ссылки
+    /*$('#preloader').show();*/
+    $('#preloader').css('opacity', '1');
+    var url = $(this).attr('href'); // Получаем URL ссылки
+    $.ajax({
+      url: url,
+      type: 'GET',
+      success: function(data) {
+        var newFeatures = $(data).find('.features');
+        if (newFeatures.length > 0) {
+          $('.features').html(newFeatures.html());
+          if (!$('#nav-toggle-l').checked) {
+              $('#nav-panel-l').css("left", "-340px");
+              $('#nav-toggle-l').checked = true;
+          }
+        }
+        $('#preloader').css('opacity', '0');
+        /*$('#preloader').hide();*/
+      }
+    });
+  });
+  
+  

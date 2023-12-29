@@ -9,4 +9,9 @@ def about(request):
     return render(request, 'main/about.html')
 
 def contacts(request):
+    print(request)
     return render(request, 'main/contacts.html')
+
+def weather(request):
+    print(request)
+    return render(request, 'main/weather.html')

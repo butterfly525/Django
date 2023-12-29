@@ -23,7 +23,7 @@ body::-webkit-scrollbar-thumb {
     padding: 0 200px;
 }
 
-header{
+nav{
     color: #fff;
     height: 90px;
     display: flex;
@@ -259,5 +259,4 @@ footer {
 #preloader h3{
     margin-top: 50vh;
     font-size: 50px;
-
 }

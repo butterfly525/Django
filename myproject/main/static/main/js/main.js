@@ -1,6 +1,5 @@
 document.getElementById('nav-panel-l').addEventListener('click', function() {
     var aside = document.getElementById('nav-panel-l');
-
     if (!document.getElementById('nav-toggle-l').checked) {
         aside.style.left = '-340px';
         document.getElementById('nav-toggle-l').checked = true;
@@ -15,11 +14,8 @@ document.getElementById('nav-panel-l').addEventListener('click', function() {
 
 
 document.querySelector('#container').addEventListener('click', function() {
-
     var aside_l = document.getElementById('nav-panel-l');
-
     if (!document.getElementById('nav-toggle-l').checked) {
-      
         aside_l.style.left = '-340px';
         document.getElementById('nav-toggle-l').checked = true;
     } 
@@ -30,6 +26,7 @@ $('.nav-link').click(function(e) {
     /*$('#preloader').show();*/
     $('#preloader').css('opacity', '1');
     var url = $(this).attr('href'); // Получаем URL ссылки
+    alert(url);
     $.ajax({
       url: url,
       type: 'GET',
